@@ -1,3 +1,7 @@
+This is a CWStatusBarNotification fork.
+Main difference - this one supports displaing new notification while previous is not yet removed.
+Some bugs (or maybe features?) fixed.
+
 # CWStatusBarNotification
 
 `CWStatusBarNotification` is a library that allows you to easily create text-based notifications that appear on the status bar.
