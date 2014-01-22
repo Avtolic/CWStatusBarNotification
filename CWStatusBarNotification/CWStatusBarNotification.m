@@ -81,7 +81,7 @@
 }
 
 - (CGRect)getNotificationLabelBottomFrame {
-    return CGRectMake(0, [self getNotificationLabelHeight], [self getStatusBarWidth], 0);
+    return CGRectMake(0, [self getNotificationLabelHeight], [self getStatusBarWidth], [self getNotificationLabelHeight]);
 }
 
 - (CGRect)getNotificationLabelFrame {
@@ -242,8 +242,10 @@
         _notificationLabel = [self createNotificationLabelWithMessage:message];
 		_statusBarView = [self createStatusBarView];
 		
-		_rootView = _notificationWindow.rootViewController.view;
-		_rootView.bounds = [self getNotificationLabelFrame];
+		_rootView = [[UIView alloc] initWithFrame:[self getNotificationLabelFrame]];
+		[_notificationWindow.rootViewController.view addSubview:_rootView];
+		_rootView.clipsToBounds = YES;
+
 		[_rootView addSubview:_statusBarView];
 		[_rootView addSubview:_notificationLabel];
 
