@@ -198,9 +198,6 @@
             break;
         case CWNotificationAnimationStyleBottom:
 			_statusBarView.frame = [self getNotificationLabelTopFrame];
-//            self.statusBarView.frame = [self getNotificationLabelTopFrame];
-//            self.notificationLabel.layer.anchorPoint = CGPointMake(0.5f, 1.0f);
-//            self.notificationLabel.center = CGPointMake(self.notificationLabel.center.x, [self getNotificationLabelHeight]);
             break;
         case CWNotificationAnimationStyleLeft:
             _statusBarView.frame = [self getNotificationLabelRightFrame];
@@ -220,7 +217,6 @@
             break;
         case CWNotificationAnimationStyleBottom:
 			_notificationLabel.frame = [self getNotificationLabelBottomFrame];
-//            self.notificationLabel.transform = CGAffineTransformMakeScale(1.0f, 0.0f);
             break;
         case CWNotificationAnimationStyleLeft:
             _notificationLabel.frame = [self getNotificationLabelLeftFrame];
@@ -265,7 +261,6 @@
             });
         }];
     }
-
 }
 
 - (void)dismissNotification

@@ -27,6 +27,11 @@ typedef NS_ENUM(NSInteger, CWNotificationAnimationType) {
     CWNotificationAnimationTypeOverlay
 };
 
+typedef NS_ENUM(NSInteger, CWNotificationQueueType) {
+    CWNotificationQueueTypeHurry,	//Dismiss previous notification and show new
+    CWNotificationQueueTypeWait		//Wait until previous notification will be dismissed
+};
+
 @property (strong, nonatomic) UIColor *notificationLabelBackgroundColor;
 @property (strong, nonatomic) UIColor *notificationLabelTextColor;
 @property (assign, nonatomic) CGFloat notificationLabelHeight;
@@ -36,10 +41,10 @@ typedef NS_ENUM(NSInteger, CWNotificationAnimationType) {
 //@property (strong, nonatomic, readonly) ScrollLabel *notificationLabel;
 
 
-@property (nonatomic) CWNotificationAnimationStyle notificationStyle;
-@property (nonatomic) CWNotificationAnimationStyle notificationAnimationInStyle;
-@property (nonatomic) CWNotificationAnimationStyle notificationAnimationOutStyle;
-@property (nonatomic) CWNotificationAnimationType notificationAnimationType;
+@property (nonatomic) CWNotificationStyle			notificationStyle;
+@property (nonatomic) CWNotificationAnimationStyle	notificationAnimationInStyle;
+@property (nonatomic) CWNotificationAnimationStyle	notificationAnimationOutStyle;
+@property (nonatomic) CWNotificationAnimationType	notificationAnimationType;
 @property (nonatomic) BOOL notificationIsShowing;
 
 - (void)displayNotificationWithMessage:(NSString *)message forDuration:(CGFloat)duration;
